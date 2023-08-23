@@ -1,13 +1,17 @@
 :root {
     --main-bg-colour: rgb(255, 218, 107);
+    font-size: 62.5%;
 }
 
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: Poppins, 'sans-serif';
+    font-size: 1.6rem;
 }
 
+/*general layout*/
 body{
     display: grid;
     border: solid 2px black;
@@ -15,12 +19,17 @@ body{
     grid-template-rows: 1fr 5fr;
     height: 100vh;
     gap: 2px;
+    padding: 8px;
 }
 
 header {
     grid-column: 2 / 3;
     grid-row: 1 / 1;
     background-color: var(--main-bg-colour);
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    gap: 3px;
+    
 }
 
 .sidebar {
@@ -34,3 +43,74 @@ header {
     grid-row: 2 /3;
     background-color: var(--main-bg-colour);
 }
+
+
+/*more nitty gritty css*/
+header > .searchbar {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+header > .notices {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+header > .greeting {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 32px;
+    gap: 16px;
+}
+
+header > .action {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.searchbar {
+    padding: 8px;
+    display: flex;
+    justify-content: start;    
+    margin-left: 32px;
+    gap: 16px;
+}
+
+#search {
+    flex: 1;
+}
+
+.notices {
+    padding: 8px;
+    display: flex;
+    gap: 16px;
+    justify-content: end;
+    align-items: center;
+    margin-right: 32px;
+}
+
+.greeting {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+#avatar64 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#greetingText {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 16px;
+    margin-right: 32px;
+}
+
